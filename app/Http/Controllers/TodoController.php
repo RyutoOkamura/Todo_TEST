@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Todo;
+use Illuminate\Support\Facades\DB;
 
 class TodoController extends Controller
 {
@@ -23,11 +24,16 @@ class TodoController extends Controller
 
     public function update(Request $request)
     {
-        return view ('index');
+        $this->validate($request, Todo::$rules);
+        $todo = $request->all();
+        unset($todo['_token']);
+        Todo::find($request->content)->update();
+        return redirect ('/');
     }
 
-    public function delete(Request $request) {
-        $todo = Todo::find($request->id)->delete();
+    public function delete(Request $request)
+    {
+        Todo::find($request->id)->delete();
         return redirect('/');
     }
 }

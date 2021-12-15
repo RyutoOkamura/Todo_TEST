@@ -49,12 +49,16 @@
                   <input class="content-update" type="text" name="content" value="{{$todo->content}}">
                 </td>
                 <td>
-                  <button class="update-button" action="/todo/update" method="post">更新</button>
+                  <form action="/todo/update" method="post">
+                    @csrf
+                    <input type="hidden" name="id" value="{{$todo->content}}">
+                    <button class="update-button">更新</button>
+                  </form>
                 </td>
                 <td>
                   <form action="/todo/delete" method="post">
                     @csrf
-                    @method('DELETE')
+                    <input type="hidden" name="id" value="{{$todo->id}}">
                     <button type="submit" class="delete-button">削除</button>
                   </form>
                 </td>

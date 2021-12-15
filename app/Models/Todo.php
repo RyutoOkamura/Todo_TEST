@@ -11,4 +11,8 @@ class Todo extends Model
 
     protected $guarded = ['id', 'created_at', 'updated_at'];
 
+    public static $rules =array(
+        'content' => 'required|max:20'
+    );
+
 }
