@@ -16,6 +16,7 @@ class TodoController extends Controller
 
     public function create(Request $request)
     {
+        $this->validate($request, Todo::$rules);
         $todo = new Todo();
         $todo->content = $request->content;
         $todo->save();
@@ -27,8 +28,8 @@ class TodoController extends Controller
         $this->validate($request, Todo::$rules);
         $todo = $request->all();
         unset($todo['_token']);
-        Todo::find($request->content)->update();
-        return redirect ('/');
+        Todo::where('id', $request->id)->update($todo);
+        return redirect('/');
     }
 
     public function delete(Request $request)

@@ -20,17 +20,18 @@
 <meta property="og:type" content="urlがトップページの場合→website、トップページ以外の場合→article">
 <meta property="og:url" content="https://........">
 <title>COACHTECH</title>
-<link rel="stylesheet"  href="css/style.css">
+<link rel="stylesheet"  href="{{ asset('css/reset.css') }}">
+<link rel="stylesheet"  href="{{ asset('css/style.css') }}">
 </head>
 <body>
     <div class="top-wrapper">
       <div class="container">
-        <h2 class="title">Todo List</h2>
-        <div class="add-todo">
-          <form action="/todo/create" method="post">
+        <h1 class="title">Todo List</h1>
+        <div class="todo">
+          <form class="add-todo" action="/todo/create" method="post">
             @csrf
             <input class="content-input" type="text" name="content">
-            <input type="submit" value="送信" class="add-button">
+            <input type="submit" value="追加" class="add-button">
           </form>
           <table>
             <tbody>
@@ -45,16 +46,16 @@
                 <td>
                   {{$todo->created_at}}
                 </td>
+              <form action="/todo/update" method="post">
+                @csrf
                 <td>
                   <input class="content-update" type="text" name="content" value="{{$todo->content}}">
                 </td>
                 <td>
-                  <form action="/todo/update" method="post">
-                    @csrf
-                    <input type="hidden" name="id" value="{{$todo->content}}">
+                    <input type="hidden" name="id" value="{{$todo->id}}">
                     <button class="update-button">更新</button>
-                  </form>
                 </td>
+              </form>
                 <td>
                   <form action="/todo/delete" method="post">
                     @csrf

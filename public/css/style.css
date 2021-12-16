@@ -1,0 +1,114 @@
+.top-wrapper {
+    background-image: url(../img/toppage.jpg);
+    background-size: cover;
+    height: 100vh;
+    position: relative;
+}
+
+.container {
+    background-image: url(../img/beach.jpg);
+    background-size: cover;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 50vw;
+    border-radius: 10px;
+    padding: 30px;
+}
+
+.title {
+    font-weight: bold;
+    font-size: 24px;
+    margin-bottom: 15px;
+}
+
+.add-todo {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 30px;
+}
+
+.content-input {
+    width: 80%;
+    padding: 5px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    font-size: 14px;
+}
+
+.add-button {
+    text-align: left;
+    border: 2px solid #dc70fa;
+    font-size: 12px;
+    color: #dc70fa;
+    background-color: #fff;
+    font-weight: bold;
+    padding: 8px 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.4s;
+}
+
+.add-button:hover {
+    background-color: #dc70fa;
+    border-color: #dc70fa;
+    color: #fff;
+}
+
+table {
+    text-align: center;
+    width: 100%;
+}
+
+tr {
+    height: 50px;
+}
+
+.content-update {
+    width: 90%;
+    padding: 5px;
+    border: 1px solid #ccc;
+    font-size: 14px;
+    border-radius: 5px;
+}
+
+.update-button {
+    text-align: left;
+    border: 2px solid #fa9770;
+    font-size: 12px;
+    color: #fa9770;
+    background-color: #fff;
+    font-weight: bold;
+    padding: 8px 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.4s;
+    outline: none;
+}
+
+.update-button:hover {
+    background-color: #fa9770;
+    border-color: #fa9770;
+    color: #fff;
+}
+
+.delete-button {
+    text-align: left;
+    border: 2px solid #71fadc;
+    font-size: 12px;
+    color: #71fadc;
+    background-color: #fff;
+    font-weight: bold;
+    padding: 8px 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.4s;
+    outline: none;
+}
+
+.delete-button:hover {
+    background-color: #71fadc;
+    border-color: #71fadc;
+    color: #fff;
+}
